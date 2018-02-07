@@ -5,25 +5,21 @@ import android.os.Bundle;
 
 public class Validator extends AppCompatActivity {
 
-    public Validator(){
-        setMaxSuccess(2);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    protected int maxSuccess; // amount of tests
+    public static final int MAX_SUCCESSES = 3; // amount of tests
+    public static final int MIN_LENGTH = 8; // min length of password
 
-    public int getMaxSuccess() {
-        return maxSuccess;
-    }
-    public void setMaxSuccess(int maxSuccess) {
-        this.maxSuccess = maxSuccess;
-    }
-
+    /**
+     * Gives the strength of a password based on a number of subroutines.
+     * @param pass The password.
+     * @return The strength of the password based on how many subroutines it passes. The max
+     * possible value is {@value #MAX_SUCCESSES}.
+     */
     protected int validate(String pass){
         int successes = 0;
         if(valNotPassword(pass))
@@ -33,11 +29,21 @@ public class Validator extends AppCompatActivity {
         return successes;
     }
 
+    /**
+     * Whether the password is not equal to "password" or any case-changed variant.
+     * @param pass The password.
+     * @return Success or failure.
+     */
     protected boolean valNotPassword(String pass){
         return !pass.toLowerCase().equals("password");
     }
 
+    /**
+     * Whether the password is of appropriate length ({@value #MIN_LENGTH}).
+     * @param pass The password.
+     * @return Success or failure.
+     */
     protected boolean valLength(String pass){
-        return pass.length() >= 8;
+        return pass.length() >= MIN_LENGTH;
     }
 }
