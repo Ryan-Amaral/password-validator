@@ -21,16 +21,16 @@ public class ValidatorTest {
     }
 
     @Test // test not "password" subroutine
-    public void testNotPassword() throws Exception{
-        assertEquals(true, vldtr.valNotPassord("9sdhf9sd8hf98sdhf"));
-        assertEquals(false, vldtr.valNotPassord("password"));
-        assertEquals(false, vldtr.valNotPassord("Password"));
-        assertEquals(false, vldtr.valNotPassord("PASSWORD"));
-        assertEquals(true, vldtr.valNotPassord("passwords"));
+    public void testNotPassword() throws Exception {
+        assertEquals(true, vldtr.valNotPassword("9sdhf9sd8hf98sdhf"));
+        assertEquals(false, vldtr.valNotPassword("password"));
+        assertEquals(false, vldtr.valNotPassword("Password"));
+        assertEquals(false, vldtr.valNotPassword("PASSWORD"));
+        assertEquals(true, vldtr.valNotPassword("passwords"));
     }
 
     @Test // test length subroutine
-    public void testNotPassword() throws Exception{
+    public void testNotPassword() throws Exception {
         assertEquals(false, vldtr.valLength(""));
         assertEquals(true, vldtr.valLength("password"));
         assertEquals(false, vldtr.valLength("passwor"));

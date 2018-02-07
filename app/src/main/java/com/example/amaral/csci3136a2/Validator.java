@@ -26,14 +26,14 @@ public class Validator extends AppCompatActivity {
 
     protected int validate(String pass){
         int successes = 0;
-        if(valNotPassord(pass))
+        if(valNotPassword(pass))
                 successes++;
         if(valLength(pass))
             successes++;
         return successes;
     }
 
-    protected boolean valNotPassord(String pass){
+    protected boolean valNotPassword(String pass){
         return true; // stub
     }
 
