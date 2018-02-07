@@ -29,4 +29,12 @@ public class ValidatorTest {
         assertEquals(false, vldtr.valNotPassord("PASSWORD"));
         assertEquals(true, vldtr.valNotPassord("passwords"));
     }
+
+    @Test // test length subroutine
+    public void testNotPassword() throws Exception{
+        assertEquals(false, vldtr.valLength(""));
+        assertEquals(true, vldtr.valLength("password"));
+        assertEquals(false, vldtr.valLength("passwor"));
+        assertEquals(true, vldtr.valLength("dsuihfv9uhf98hv98dshf98sdhf98sd"));
+    }
 }
