@@ -38,6 +38,6 @@ public class Validator extends AppCompatActivity {
     }
 
     protected boolean valLength(String pass){
-        return true; // stub
+        return pass.length() >= 8;
     }
 }
