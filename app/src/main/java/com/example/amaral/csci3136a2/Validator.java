@@ -34,7 +34,7 @@ public class Validator extends AppCompatActivity {
     }
 
     protected boolean valNotPassword(String pass){
-        return true; // stub
+        return !pass.toLowerCase().equals("password");
     }
 
     protected boolean valLength(String pass){

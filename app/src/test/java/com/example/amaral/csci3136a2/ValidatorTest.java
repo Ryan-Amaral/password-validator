@@ -30,7 +30,7 @@ public class ValidatorTest {
     }
 
     @Test // test length subroutine
-    public void testNotPassword() throws Exception {
+    public void testLength() throws Exception {
         assertEquals(false, vldtr.valLength(""));
         assertEquals(true, vldtr.valLength("password"));
         assertEquals(false, vldtr.valLength("passwor"));
