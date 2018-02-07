@@ -25,6 +25,19 @@ public class Validator extends AppCompatActivity {
     }
 
     protected int validate(String pass){
-        return 0; // stub
+        int successes = 0;
+        if(valNotPassord(pass))
+                successes++;
+        if(valLength(pass))
+            successes++;
+        return successes;
+    }
+
+    protected boolean valNotPassord(String pass){
+        return true; // stub
+    }
+
+    protected boolean valLength(String pass){
+        return true; // stub
     }
 }
