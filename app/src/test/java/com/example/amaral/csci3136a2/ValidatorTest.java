@@ -15,10 +15,9 @@ public class ValidatorTest {
 
     @Test // test validator as a whole
     public void testValidator() throws Exception {
-        assertEquals(1, vldtr.validate("passwor"));
-        assertEquals(1, vldtr.validate("password"));
-        assertEquals(2, vldtr.validate("12345678"));
-        assertEquals(2, vldtr.validate("passwords"));
+        assertEquals(1, vldtr.validate("password")); // f not "password" p length
+        assertEquals(1, vldtr.validate("passwor")); // p not "password" f length
+        assertEquals(2, vldtr.validate("passwords")); // p not "password" p length
     }
 
     @Test // test not "password" subroutine
