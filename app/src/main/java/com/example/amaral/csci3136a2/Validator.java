@@ -46,4 +46,32 @@ public class Validator extends AppCompatActivity {
     protected boolean valLength(String pass){
         return pass.length() >= MIN_LENGTH;
     }
+
+    /**
+     * Whether the password contains a base-10 digit.
+     * @param pass The password.
+     * @return Success or failure.
+     */
+    protected boolean valDigit(String pass){
+        //return pass.matches(".*\\d.*");
+        return true; // stub
+    }
+
+    /**
+     * Whether the password contains a special character.
+     * @param pass The password.
+     * @return Success or failure.
+     */
+    protected boolean valSpecial(String pass){
+        return true; // stub
+    }
+
+    /**
+     * Whether the password contains upper and lowercase letters.
+     * @param pass The password.
+     * @return Success or failure.
+     */
+    protected  boolean valBothCase(String pass){
+        return true; // stub
+    }
 }
