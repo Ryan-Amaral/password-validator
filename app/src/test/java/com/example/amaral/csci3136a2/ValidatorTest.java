@@ -18,6 +18,7 @@ public class ValidatorTest {
         assertEquals(1, vldtr.validate("password")); // f not "password" p length
         assertEquals(1, vldtr.validate("passwor")); // p not "password" f length
         assertEquals(2, vldtr.validate("passwords")); // p not "password" p length
+        assertEquals(5, vldtr.validate("aA5%&Tidshfs46543"));
         // ... and every combination of passes fails of different tests,
     }
 
