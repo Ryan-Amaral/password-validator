@@ -39,21 +39,21 @@ public class ValidatorTest {
 
     @Test // test digit subroutine
     public void testDigit() throws Exception {
-        assertEquals(false, vldtr.valLength("sdkfjslkdjfsda"));
-        assertEquals(true, vldtr.valLength("sdf76876sdfsdf68asd"));
-        assertEquals(true, vldtr.valLength("12345678"));
+        assertEquals(false, vldtr.valDigit("sdkfjslkdjfsda"));
+        assertEquals(true, vldtr.valDigit("sdf76876sdfsdf68asd"));
+        assertEquals(true, vldtr.valDigit("12345678"));
     }
 
     @Test // test special char subroutine
     public void testSpecial() throws Exception {
-        assertEquals(false, vldtr.valLength("dkfljsdalfk"));
-        assertEquals(true, vldtr.valLength("sdjkf*&^98y"));
+        assertEquals(false, vldtr.valSpecial("dkfljsdalfk"));
+        assertEquals(true, vldtr.valSpecial("sdjkf*&^98y"));
     }
 
     @Test // test both cases subroutine
     public void testBothCase() throws Exception {
-        assertEquals(false, vldtr.valLength("asef345weafsdf"));
-        assertEquals(false, vldtr.valLength("SDGSDA345DSFG**"));
-        assertEquals(true, vldtr.valLength("asdfJKH876jg"));
+        assertEquals(false, vldtr.valBothCase("asef345weafsdf"));
+        assertEquals(false, vldtr.valBothCase("SDGSDA345DSFG**"));
+        assertEquals(true, vldtr.valBothCase("asdfJKH876jg"));
     }
 }

@@ -53,8 +53,7 @@ public class Validator extends AppCompatActivity {
      * @return Success or failure.
      */
     protected boolean valDigit(String pass){
-        //return pass.matches(".*\\d.*");
-        return true; // stub
+        return pass.matches(".*\\d.*");
     }
 
     /**
