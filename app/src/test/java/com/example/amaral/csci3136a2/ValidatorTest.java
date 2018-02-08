@@ -36,4 +36,24 @@ public class ValidatorTest {
         assertEquals(false, vldtr.valLength("passwor"));
         assertEquals(true, vldtr.valLength("dsuihfv9uhf98hv98dshf98sdhf98sd"));
     }
+
+    @Test // test digit subroutine
+    public void testDigit() throws Exception {
+        assertEquals(false, vldtr.valLength("sdkfjslkdjfsda"));
+        assertEquals(true, vldtr.valLength("sdf76876sdfsdf68asd"));
+        assertEquals(true, vldtr.valLength("12345678"));
+    }
+
+    @Test // test special char subroutine
+    public void testSpecial() throws Exception {
+        assertEquals(false, vldtr.valLength("dkfljsdalfk"));
+        assertEquals(true, vldtr.valLength("sdjkf*&^98y"));
+    }
+
+    @Test // test both cases subroutine
+    public void testBothCase() throws Exception {
+        assertEquals(false, vldtr.valLength("asef345weafsdf"));
+        assertEquals(false, vldtr.valLength("SDGSDA345DSFG**"));
+        assertEquals(true, vldtr.valLength("asdfJKH876jg"));
+    }
 }
