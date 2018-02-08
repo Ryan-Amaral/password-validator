@@ -26,6 +26,12 @@ public class Validator extends AppCompatActivity {
                 successes++;
         if(valLength(pass))
             successes++;
+        if(valDigit(pass))
+            successes++;
+        if(valSpecial(pass))
+            successes++;
+        if(valBothCase(pass))
+            successes++;
         return successes;
     }
 
