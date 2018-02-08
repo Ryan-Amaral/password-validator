@@ -62,7 +62,7 @@ public class Validator extends AppCompatActivity {
      * @return Success or failure.
      */
     protected boolean valSpecial(String pass){
-        return true; // stub
+        return pass.matches(".*[^\\d\\w].*");
     }
 
     /**
@@ -71,6 +71,6 @@ public class Validator extends AppCompatActivity {
      * @return Success or failure.
      */
     protected  boolean valBothCase(String pass){
-        return true; // stub
+        return pass.matches(".*([a-z].*[A-Z]|[A-Z].*[a-z]).*");
     }
 }
