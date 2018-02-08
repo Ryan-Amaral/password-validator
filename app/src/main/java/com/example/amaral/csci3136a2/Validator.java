@@ -11,7 +11,7 @@ public class Validator extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public static final int MAX_SUCCESSES = 3; // amount of tests
+    public static final int MAX_SUCCESSES = 5; // amount of tests
     public static final int MIN_LENGTH = 8; // min length of password
 
     /**
