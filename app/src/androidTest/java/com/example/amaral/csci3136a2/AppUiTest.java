@@ -2,9 +2,11 @@ package com.example.amaral.csci3136a2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -26,10 +28,14 @@ public class AppUiTest {
     private String okPass;
     private String goodPass;
 
+    @Rule
+    public ActivityTestRule<Validator> mActivityRule = new ActivityTestRule<>(
+            Validator.class);
+
     @Before
     public void initPass() {
         badPass = "aaa";
-        okPass = "AAAaaa123";
+        okPass = "AAA33333";
         goodPass = "Aa1@lasdjfW#RAWTgawew";
     }
 
@@ -63,7 +69,7 @@ public class AppUiTest {
     public void validateGoodPassword() throws Exception {
         // type text
         onView(withId(R.id.edt_txt_pass))
-                .perform(typeText(badPass), closeSoftKeyboard());
+                .perform(typeText(goodPass), closeSoftKeyboard());
         // press validate button
         onView(withId(R.id.btn_val))
                 .perform(click());

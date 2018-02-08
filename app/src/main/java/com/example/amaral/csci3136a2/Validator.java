@@ -84,7 +84,7 @@ public class Validator extends AppCompatActivity {
         return pass.matches(".*([a-z].*[A-Z]|[A-Z].*[a-z]).*");
     }
 
-    protected void btnValClick(View view){
+    public void btnValClick(View view){
         // get password validation value from validate method
         String valStrength = Integer.toString(validate(
                 ((EditText)findViewById(R.id.edt_txt_pass)).getText().toString()));
