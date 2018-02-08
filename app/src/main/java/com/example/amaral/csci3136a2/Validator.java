@@ -2,6 +2,10 @@ package com.example.amaral.csci3136a2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Validator extends AppCompatActivity {
 
@@ -76,7 +80,15 @@ public class Validator extends AppCompatActivity {
      * @param pass The password.
      * @return Success or failure.
      */
-    protected  boolean valBothCase(String pass){
+    protected boolean valBothCase(String pass){
         return pass.matches(".*([a-z].*[A-Z]|[A-Z].*[a-z]).*");
     }
+
+    protected void btnValClick(View view){
+        // get password validation value from validate method
+        String valStrength = Integer.toString(validate(
+                ((EditText)findViewById(R.id.edt_txt_pass)).getText().toString()));
+        ((TextView)findViewById(R.id.txt_strength)).setText(valStrength);
+    }
+
 }
